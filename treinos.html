@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planejador de Treino de Basquete</title>
+  <link rel="stylesheet" href="treinos.css" />
+</head>
+<body>
+  <header>
+    <h1><img src="/img/icons8-basketball.gif" width="40" height="40" alt="basquete"> Planejador de Treino de Basquete</h1>
+  </header>
+
+  <main>
+    <h2>Adicionar Novo Treino</h2>
+    <form id="treinoForm">
+      <input type="text" id="nome" placeholder="Nome do exercício" required />
+      <select id="categoria">
+        <option value="Aquecimento">Aquecimento</option>
+        <option value="Arremesso">Arremesso</option>
+        <option value="Defesa">Defesa</option>
+        <option value="Drible">Drible</option>
+        <option value="Condicionamento">Condicionamento</option>
+      </select>
+      <input type="number" id="repeticoes" placeholder="Repetições" required />
+      <input type="number" id="series" placeholder="Séries" required />
+      <button type="submit">Adicionar Treino</button>
+    </form>
+
+    <h2>Treinos Planejados</h2>
+    <div class="treino-image">
+      <img src="/img/icons8-training-50.png" width="60" height="60" alt="treino">
+    </div>
+    <ul id="listaTreinos"></ul>
+  </main>
+
+  <script>
+    const form = document.getElementById('treinoForm');
+    const lista = document.getElementById('listaTreinos');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const categoria = document.getElementById('categoria').value;
+      const repeticoes = document.getElementById('repeticoes').value;
+      const series = document.getElementById('series').value;
+
+      const item = document.createElement('li');
+      item.innerHTML = `<strong>${nome}</strong> - ${categoria} (${series}x${repeticoes})`;
+
+      lista.appendChild(item);
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
