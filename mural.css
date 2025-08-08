@@ -1,0 +1,315 @@
+:root {
+    --main-color: #d19618;
+    --bg: #ffffff;
+    --border: 0.1rem solid rgb(0, 0, 0);
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    min-height: 100vh;
+    background-image: url('/img/fire-water-cool-basketball-iphone-e0qwl35muovr70o8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+.navbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #d19618;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-nome {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-nome h2 {
+    font-size: 1.8rem;
+    color: #000;
+}
+
+.voltar-btn {
+    background-color: #d19618;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    color: #000;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.voltar-btn:hover {
+    background-color: #bd870f;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.formulario-section, .mural-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.formulario-section h2, .mural-section h2 {
+    font-size: 2.2rem;
+    color: #000;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.6rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    transition: border-color 0.3s ease;
+    font-family: "Roboto", sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button[type="submit"] {
+    background: var(--main-color);
+    color: #000;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #b8860d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(209, 150, 24, 0.3);
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filtro-btn {
+    background: #f0f0f0;
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+    background: var(--main-color);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Postagens */
+.postagens-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.postagem {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--main-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postagem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.postagem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.postagem-header h3 {
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.categoria {
+    background: var(--main-color);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.postagem-content {
+    margin-bottom: 1.5rem;
+}
+
+.postagem-content p {
+    font-size: 1.4rem;
+    color: #333;
+    line-height: 1.6;
+    font-family: "Roboto", sans-serif;
+}
+
+.postagem-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.autor {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.curtir-btn {
+    background: #f0f0f0;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.curtir-btn:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.sem-postagens {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #666;
+    padding: 3rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 2px dashed #ddd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .logo-nome h2 {
+        font-size: 1.5rem;
+    }
+
+    .filtros {
+        justify-content: center;
+    }
+
+    .filtro-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .postagem-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .formulario-section, .mural-section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .formulario-section, .mural-section {
+        padding: 1.5rem;
+    }
+
+    .postagem {
+        padding: 1.5rem;
+    }
+
+    .postagem-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+} 
