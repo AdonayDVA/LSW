@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planejador de Dieta</title>
+  <link rel="stylesheet" href="nutricao.css" />
+</head>
+<body>
+  <header>
+    <h1><img src="/img/icons8-apple-fruit-50.png" width="40" height="40" alt="nutrição"> Planejador de Dieta Diária</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Adicionar Refeição</h2>
+      <form id="dietaForm">
+        <input type="text" id="refeicao" placeholder="Nome da refeição" required />
+        <input type="time" id="horario" required />
+        <input type="number" id="calorias" placeholder="Calorias" required />
+        <textarea id="alimentos" placeholder="Alimentos incluídos" rows="3" required></textarea>
+        <button type="submit">Adicionar Refeição</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Dieta do Dia</h2>
+      <div class="nutricao-image">
+        <img src="/img/piramide_alimentar_para_alimentacao_saudavel_48d43b2c98.avif" width="300" height="200" alt="pirâmide alimentar">
+      </div>
+      <ul id="listaRefeicoes"></ul>
+      <p id="totalCalorias">Total de calorias: 0</p>
+      <button onclick="carregarModelo()">Carregar Dieta de 3500 Calorias</button>
+    </section>
+  </main>
+
+  <script src="nutricao.js"></script>
+</body>
+</html>
