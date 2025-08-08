@@ -15,4 +15,4 @@ form.addEventListener('submit', function(event) {
   lista.appendChild(item);
 
   form.reset();
-}); 
+});
