@@ -1,0 +1,16 @@
+{
+  "name": "lsw-basketball-project",
+  "version": "1.0.0",
+  "description": "Projeto de basquete com funcionalidades de mural, nutrição, treinos e quadro tático",
+  "main": "index.html",
+  "scripts": {
+    "json-server-watch": "json-server --watch db.json --port 3000",
+    "start": "json-server --watch db.json --port 3000"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  },
+  "keywords": ["basquete", "esporte", "treino", "nutrição"],
+  "author": "LSW Team",
+  "license": "MIT"
+}
