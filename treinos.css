@@ -1,66 +1,140 @@
+/* Estilos para a página de treinos */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: white;
-  margin: 0;
-  padding: 0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
 }
 
-header {
-  background-color: orange;
-  color: black;
-  text-align: center;
-  padding: 1rem;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color: #111;
-  border-radius: 10px;
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5em;
 }
 
-h2 {
-  color: orange;
+.form-group {
+    margin-bottom: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
 
-input,
-select,
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
 button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+    margin-right: 10px;
 }
 
-input,
-select {
-  background-color: #333;
-  color: white;
+button:hover {
+    transform: translateY(-2px);
 }
 
-button {
-  background-color: orange;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
+button:active {
+    transform: translateY(0);
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+#listaTreinos {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
 }
 
-li {
-  background-color: #000000;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-left: 5px solid orange;
+#listaTreinos li {
+    background: #f8f9fa;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#listaTreinos li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#listaTreinos strong {
+    color: #333;
+    font-size: 18px;
+}
+
+.remover-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.remover-btn:hover {
+    background: #c82333;
+    transform: scale(1.1);
+}
+
+.remover-btn:active {
+    transform: scale(0.95);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
 }

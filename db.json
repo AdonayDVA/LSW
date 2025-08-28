@@ -1,0 +1,124 @@
+{
+  "postagens": [
+    {
+      "id": 1,
+      "nome": "João Lucas",
+      "titulo": "Treino de Arremesso Incrível!",
+      "conteudo": "Hoje tive um treino fantástico de arremesso! Consegui acertar 15 cestas de 3 pontos consecutivas. O segredo foi focar na respiração e manter a técnica consistente. Recomendo para todos que querem melhorar o arremesso!",
+      "categoria": "Treino",
+      "data": "2024-01-15T10:00:00.000Z",
+      "curtidas": 8
+    },
+    {
+      "id": 2,
+      "nome": "Adonay",
+      "titulo": "Campeonato Regional",
+      "conteudo": "Nosso time venceu o campeonato regional! Foi uma partida emocionante, ganhamos por 78-72. Todos jogaram muito bem, especialmente nossa defesa que foi fundamental para a vitória.",
+      "categoria": "Evento",
+      "data": "2024-01-14T15:30:00.000Z",
+      "curtidas": 15
+    },
+    {
+      "id": 3,
+      "nome": "Anthony",
+      "titulo": "Dica de Defesa",
+      "conteudo": "Uma dica valiosa para melhorar a defesa: sempre mantenha os pés em movimento e fique na ponta dos pés. Isso te permite reagir mais rapidamente aos movimentos do adversário. Testei hoje e funcionou perfeitamente!",
+      "categoria": "Dica",
+      "data": "2024-01-13T09:15:00.000Z",
+      "curtidas": 12
+    }
+  ],
+  "refeicoes": [
+    {
+      "id": 1,
+      "nome": "Café da Manhã",
+      "horario": "07:00",
+      "calorias": 800,
+      "alimentos": "Ovos mexidos, pão integral, leite com aveia e banana"
+    },
+    {
+      "id": 2,
+      "nome": "Lanche da Manhã",
+      "horario": "10:00",
+      "calorias": 400,
+      "alimentos": "Iogurte natural com granola e mel"
+    },
+    {
+      "id": 3,
+      "nome": "Almoço",
+      "horario": "12:30",
+      "calorias": 1000,
+      "alimentos": "Arroz, feijão, frango grelhado, salada, batata-doce"
+    },
+    {
+      "id": 4,
+      "nome": "Lanche da Tarde",
+      "horario": "16:00",
+      "calorias": 500,
+      "alimentos": "Pão com pasta de amendoim e vitamina de frutas"
+    },
+    {
+      "id": 5,
+      "nome": "Jantar",
+      "horario": "19:30",
+      "calorias": 600,
+      "alimentos": "Macarrão com carne moída, legumes e suco natural"
+    },
+    {
+      "id": 6,
+      "nome": "Ceia",
+      "horario": "22:00",
+      "calorias": 200,
+      "alimentos": "Leite morno com bolachas integrais"
+    }
+  ],
+  "treinos": [
+    {
+      "id": 1,
+      "nome": "Arremesso de 3 pontos",
+      "categoria": "Arremesso",
+      "repeticoes": "20",
+      "series": "5"
+    },
+    {
+      "id": 2,
+      "nome": "Drible com mudança de direção",
+      "categoria": "Drible",
+      "repeticoes": "30",
+      "series": "3"
+    },
+    {
+      "id": 3,
+      "nome": "Defesa lateral",
+      "categoria": "Defesa",
+      "repeticoes": "15",
+      "series": "4"
+    }
+  ],
+  "jogadores": [
+    {
+      "id": 1,
+      "nome": "João Lucas",
+      "posicao": "Armador",
+      "numero": "5",
+      "x": 100,
+      "y": 150
+    },
+    {
+      "id": 2,
+      "nome": "Adonay",
+      "posicao": "Ala",
+      "numero": "8",
+      "x": 200,
+      "y": 100
+    },
+    {
+      "id": 3,
+      "nome": "Anthony",
+      "posicao": "Pivô",
+      "numero": "15",
+      "x": 300,
+      "y": 200
+    }
+  ]
+}

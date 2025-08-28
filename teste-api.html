@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste da API - LSW Basketball Project</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .api-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+        }
+        .api-section h2 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .method {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .get { background: #28a745; }
+        .post { background: #007bff; }
+        .put { background: #ffc107; color: #000; }
+        .delete { background: #dc3545; }
+        .url {
+            font-family: monospace;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .test-buttons {
+            margin-top: 15px;
+        }
+        .test-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .test-btn:hover {
+            background: #5a6fd8;
+        }
+        .response {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .status {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Teste da API - LSW Basketball Project</h1>
+        
+        <div class="info">
+            <strong>⚠️ Importante:</strong> Certifique-se de que o servidor json-server está rodando com o comando <code>npm start</code> antes de testar a API.
+        </div>
+
+        <!-- Seção Postagens -->
+        <div class="api-section">
+            <h2>📝 API de Postagens</h2>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="url">/postagens</span> - Listar todas as postagens
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testGetPostagens()">Testar GET</button>
+                </div>
+                <div id="response-postagens-get" class="response" style="display: none;"></div>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/postagens</span> - Criar nova postagem
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testPostPostagem()">Testar POST</button>
+                </div>
+                <div id="response-postagens-post" class="response" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Seção Refeições -->
+        <div class="api-section">
+            <h2>🍽️ API de Refeições</h2>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="url">/refeicoes</span> - Listar todas as refeições
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testGetRefeicoes()">Testar GET</button>
+                </div>
+                <div id="response-refeicoes-get" class="response" style="display: none;"></div>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/refeicoes</span> - Criar nova refeição
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testPostRefeicao()">Testar POST</button>
+                </div>
+                <div id="response-refeicoes-post" class="response" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Seção Treinos -->
+        <div class="api-section">
+            <h2>🏀 API de Treinos</h2>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="url">/treinos</span> - Listar todos os treinos
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testGetTreinos()">Testar GET</button>
+                </div>
+                <div id="response-treinos-get" class="response" style="display: none;"></div>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/treinos</span> - Criar novo treino
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testPostTreino()">Testar POST</button>
+                </div>
+                <div id="response-treinos-post" class="response" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Seção Jogadores -->
+        <div class="api-section">
+            <h2>👥 API de Jogadores</h2>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="url">/jogadores</span> - Listar todos os jogadores
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testGetJogadores()">Testar GET</button>
+                </div>
+                <div id="response-jogadores-get" class="response" style="display: none;"></div>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/jogadores</span> - Criar novo jogador
+                <div class="test-buttons">
+                    <button class="test-btn" onclick="testPostJogador()">Testar POST</button>
+                </div>
+                <div id="response-jogadores-post" class="response" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Status do Servidor -->
+        <div class="api-section">
+            <h2>🔍 Status do Servidor</h2>
+            <div class="test-buttons">
+                <button class="test-btn" onclick="checkServerStatus()">Verificar Status</button>
+            </div>
+            <div id="server-status" class="response" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000';
+
+        // Função para mostrar resposta
+        function showResponse(elementId, status, data) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.innerHTML = `<div class="status ${status === 'success' ? 'success' : 'error'}">Status: ${status === 'success' ? '✅ Sucesso' : '❌ Erro'}</div>${JSON.stringify(data, null, 2)}`;
+        }
+
+        // Função para verificar status do servidor
+        async function checkServerStatus() {
+            try {
+                const response = await fetch(API_BASE_URL);
+                const status = response.ok ? 'success' : 'error';
+                const data = {
+                    status: response.status,
+                    statusText: response.statusText,
+                    url: API_BASE_URL,
+                    timestamp: new Date().toISOString()
+                };
+                showResponse('server-status', status, data);
+            } catch (error) {
+                showResponse('server-status', 'error', {
+                    error: error.message,
+                    url: API_BASE_URL,
+                    timestamp: new Date().toISOString()
+                });
+            }
+        }
+
+        // Teste GET Postagens
+        async function testGetPostagens() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/postagens`);
+                const data = await response.json();
+                showResponse('response-postagens-get', 'success', data);
+            } catch (error) {
+                showResponse('response-postagens-get', 'error', { error: error.message });
+            }
+        }
+
+        // Teste POST Postagem
+        async function testPostPostagem() {
+            try {
+                const novaPostagem = {
+                    nome: "Teste API",
+                    titulo: "Postagem de Teste",
+                    conteudo: "Esta é uma postagem de teste da API",
+                    categoria: "Teste",
+                    data: new Date().toISOString(),
+                    curtidas: 0
+                };
+
+                const response = await fetch(`${API_BASE_URL}/postagens`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(novaPostagem)
+                });
+
+                const data = await response.json();
+                showResponse('response-postagens-post', 'success', data);
+            } catch (error) {
+                showResponse('response-postagens-post', 'error', { error: error.message });
+            }
+        }
+
+        // Teste GET Refeições
+        async function testGetRefeicoes() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/refeicoes`);
+                const data = await response.json();
+                showResponse('response-refeicoes-get', 'success', data);
+            } catch (error) {
+                showResponse('response-refeicoes-get', 'error', { error: error.message });
+            }
+        }
+
+        // Teste POST Refeição
+        async function testPostRefeicao() {
+            try {
+                const novaRefeicao = {
+                    nome: "Refeição de Teste",
+                    horario: "12:00",
+                    calorias: 500,
+                    alimentos: "Alimentos de teste"
+                };
+
+                const response = await fetch(`${API_BASE_URL}/refeicoes`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(novaRefeicao)
+                });
+
+                const data = await response.json();
+                showResponse('response-refeicoes-post', 'success', data);
+            } catch (error) {
+                showResponse('response-refeicoes-post', 'error', { error: error.message });
+            }
+        }
+
+        // Teste GET Treinos
+        async function testGetTreinos() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/treinos`);
+                const data = await response.json();
+                showResponse('response-treinos-get', 'success', data);
+            } catch (error) {
+                showResponse('response-treinos-get', 'error', { error: error.message });
+            }
+        }
+
+        // Teste POST Treino
+        async function testPostTreino() {
+            try {
+                const novoTreino = {
+                    nome: "Treino de Teste",
+                    categoria: "Teste",
+                    repeticoes: "10",
+                    series: "3"
+                };
+
+                const response = await fetch(`${API_BASE_URL}/treinos`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(novoTreino)
+                });
+
+                const data = await response.json();
+                showResponse('response-treinos-post', 'success', data);
+            } catch (error) {
+                showResponse('response-treinos-post', 'error', { error: error.message });
+            }
+        }
+
+        // Teste GET Jogadores
+        async function testGetJogadores() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/jogadores`);
+                const data = await response.json();
+                showResponse('response-jogadores-get', 'success', data);
+            } catch (error) {
+                showResponse('response-jogadores-get', 'error', { error: error.message });
+            }
+        }
+
+        // Teste POST Jogador
+        async function testPostJogador() {
+            try {
+                const novoJogador = {
+                    nome: "Jogador de Teste",
+                    posicao: "Teste",
+                    numero: "99",
+                    x: 100,
+                    y: 100
+                };
+
+                const response = await fetch(`${API_BASE_URL}/jogadores`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(novoJogador)
+                });
+
+                const data = await response.json();
+                showResponse('response-jogadores-post', 'success', data);
+            } catch (error) {
+                showResponse('response-jogadores-post', 'error', { error: error.message });
+            }
+        }
+
+        // Verificar status do servidor ao carregar a página
+        window.onload = function() {
+            checkServerStatus();
+        };
+    </script>
+</body>
+</html>
